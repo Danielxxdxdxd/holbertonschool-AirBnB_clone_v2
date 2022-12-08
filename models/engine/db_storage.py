@@ -48,7 +48,7 @@ class DBStorage():
 
     def new(self, obj):
         """"""
-        self.__session.add(obj) 
+        self.__session.add(obj)
 
     def save(self):
         """"""
@@ -63,7 +63,7 @@ class DBStorage():
         """"""
         Base.metadata.create_all(self.__engine)
         data_base_session = sessionmaker(bind=self.__engine,
-                expire_on_commit=False)
+                                         expire_on_commit=False)
         Session = scoped_session(data_base_session)
         self.__session = Session()
 
